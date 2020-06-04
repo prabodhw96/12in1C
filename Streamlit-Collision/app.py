@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pydeck as pdk
 
 DATA_URL = (
     "C:/Users/smart class/Desktop/Prabodh/Projects/Streamlit-Collision/Motor_Vehicle_Collisions_-_Crashes.csv"
@@ -31,7 +32,29 @@ hour = st.slider("Hour to look at", 0, 23)
 data = data[data["date/time"].dt.hour == hour]
 
 st.markdown("Vehicle collisions between %i:00 and %i:00" % (hour, (hour + 1) % 24))
+midpoint = (np.average(data["latitude"]), np.average(data["longitude"]))
 
+st.write(pdk.Deck(
+    map_style="mapbox://styles/mapbox/light-v9",
+    initial_view_state={
+        "latitude": midpoint[0],
+        "longitude": midpoint[1],
+        "zoom": 11,
+        "pitch": 50,
+    },
+    layers=[
+        pdk.Layer(
+            "HexagonLayer",
+            data = data[["date/time", "latitude", "longitude"]],
+            get_position=["longitude", "latitude"],
+            radius=100,
+            extruded=True,
+            pickable=True,
+            elevation_scale=4,
+            elevation_range=[0,1000],
+        ),
+    ],
+))
 
 
 
