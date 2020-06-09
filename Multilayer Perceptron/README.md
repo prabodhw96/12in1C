@@ -1,0 +1,3 @@
+# Multilayer Perceptron
+## Overview
+Multilayer perceptronl (MLP) model using Keras, with Tensorflow as its backend. One of the toy datasets available in ``tensorflow.keras.datasets``, Reuters dataset, a set of short newswires and their topics, published by Reuters in 1986, is used for multi-class classification. It's a very simple, widely used toy dataset for text classification. There are 46 different topics, some of which are more represented than others. But each topic has at least 10 examples in the training set. So in this project, MLP feed-forward neural network is built to classify Reuters newswires into 46 different mutually-exclusive topics.
