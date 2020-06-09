@@ -1,0 +1,3 @@
+# Statistical-Data-Visualization-Seaborn
+## Overview
+This project employs Seaborn, a statistical visualization library, to discover and explore the relationships in the Breast Cancer Wisconsin (Diagnostic) data set. XGBoost is employed to classify a tumors as either malignant or benign. Recursive feature elimination with cross-validation is used to find the best features and cumulative explained variance of no. of features is checked using PCA.
