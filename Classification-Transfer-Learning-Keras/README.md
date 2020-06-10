@@ -1,0 +1,3 @@
+# Classification-Transfer-Learning-Keras
+## Overview
+This project involves creating and training a Convolutional Neural Network (CNN) with an existing CNN model architecture, and its pre-trained weights. MobileNet model architecture is used along with its weights trained on the popular ImageNet dataset. By using a model with pre-trained weights, and then training just the last layers on a new dataset, the training time required to fit the model to the new data is drastically reduced. The pre-trained model has already learned to recognize thousands on simple and complex image features, and we are using its output as the input to the last layers that we are training.
